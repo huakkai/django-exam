@@ -1,0 +1,56 @@
+version: "3"
+services:
+  db:
+    image: yisiqi/postgres-asciinema:11
+    environment:
+          - POSTGRES_DB=django_demo
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=odoo
+    ports:
+      - "5435:5432"
+    restart: always
+  web0:
+    build: .
+    image: gdc.docker.iec.io/yanhuaqiang-django:yanhuaqiang-20210123
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py loaddata init.json && python manage.py runserver 0.0.0.0:8000"
+#    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/code
+#    ports:
+#      - "8000:8000"
+    depends_on:
+      - db
+    links:
+      - db
+    restart: always
+  web1:
+#    build: .
+    image: gdc.docker.iec.io/yanhuaqiang-django:yanhuaqiang-20210123
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/code
+#    ports:
+#      - "8001:8000"
+    depends_on:
+      - db
+      - web0
+    links:
+      - db
+    restart: always
+  nginx:
+#    build: ./nginx
+    image: nginx:stable
+    ports:
+      - "80:80"
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d
+    links:
+      - web0
+      - web1
+    depends_on:
+      - web0
+      - web1
+    restart: always
+
+  chat-redis:
+    image: redis:5

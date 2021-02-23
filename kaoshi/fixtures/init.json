@@ -1,0 +1,220 @@
+[
+  {
+    "model": "kaoshi.unit",
+    "pk": 1,
+    "fields": {
+      "name": "部",
+      "number": 1,
+      "precision": 0
+    }
+  },
+  {
+    "model": "kaoshi.unit",
+    "pk": 2,
+    "fields": {
+      "name": "个",
+      "number": 2,
+      "precision": 0
+    }
+  },
+  {
+    "model": "kaoshi.unit",
+    "pk": 3,
+    "fields": {
+      "name": "千克",
+      "number": 3,
+      "precision": 2
+    }
+  },
+  {
+    "model": "kaoshi.unit",
+    "pk": 4,
+    "fields": {
+      "name": "ml",
+      "number": 4,
+      "precision": 3
+    }
+  },
+  {
+    "model": "kaoshi.material",
+    "pk": 1,
+    "fields": {
+      "name": "iphone12",
+      "unit": "部"
+    }
+  },
+  {
+    "model": "kaoshi.material",
+    "pk": 2,
+    "fields": {
+      "name": "充电插头",
+      "unit": "个"
+    }
+  },
+  {
+    "model": "kaoshi.material",
+    "pk": 3,
+    "fields": {
+      "name": "苹果",
+      "unit": "千克"
+    }
+  },
+  {
+    "model": "kaoshi.material",
+    "pk": 4,
+    "fields": {
+      "name": "啤酒",
+      "unit": "ml"
+    }
+  },
+  {
+    "model": "kaoshi.stock",
+    "pk": 1,
+    "fields": {
+      "material_id": 1,
+      "material_name": "iphone12",
+      "material_unit": "部",
+      "quantity": 0
+    }
+  },
+  {
+    "model": "kaoshi.stock",
+    "pk": 2,
+    "fields": {
+      "material_id": 2,
+      "material_name": "充电插头",
+      "material_unit": "个",
+      "quantity": 0
+    }
+  },
+  {
+    "model": "kaoshi.stock",
+    "pk": 3,
+    "fields": {
+      "material_id": 3,
+      "material_name": "苹果",
+      "material_unit": "千克",
+      "quantity": 0
+    }
+  },
+  {
+    "model": "kaoshi.stock",
+    "pk": 4,
+    "fields": {
+      "material_id": 4,
+      "material_name": "青岛啤酒",
+      "material_unit": "ml",
+      "quantity": 0
+    }
+  },
+  {
+    "model": "kaoshi.pricelist",
+    "pk": 1,
+    "fields": {
+      "material_id": 1,
+      "quantity_start": 0,
+      "quantity_end": 500,
+      "price_start": 7588.00000,
+      "price_end": 7888.00000
+    }
+  },
+  {
+    "model": "kaoshi.pricelist",
+    "pk": 2,
+    "fields": {
+      "material_id": 1,
+      "quantity_start": 500,
+      "quantity_end": 99999999,
+      "price_start": 6888.00000,
+      "price_end": 7688.00000
+    }
+  },
+  {
+    "model": "kaoshi.pricelist",
+    "pk": 3,
+    "fields": {
+      "material_id": 2,
+      "quantity_start": 0,
+      "quantity_end": 300,
+      "price_start": 109.00000,
+      "price_end": 129.00000
+    }
+  },
+  {
+    "model": "kaoshi.pricelist",
+    "pk": 4,
+    "fields": {
+      "material_id": 2,
+      "quantity_start": 300,
+      "quantity_end": 99999999,
+      "price_start": 99.00000,
+      "price_end": 119.00000
+    }
+  },
+  {
+    "model": "kaoshi.pricelist",
+    "pk": 5,
+    "fields": {
+      "material_id": 3,
+      "quantity_start": 0,
+      "quantity_end": 5000,
+      "price_start": 23.00000,
+      "price_end": 25.00000
+    }
+  },
+  {
+    "model": "kaoshi.pricelist",
+    "pk": 6,
+    "fields": {
+      "material_id": 3,
+      "quantity_start": 5000,
+      "quantity_end": 200000,
+      "price_start": 22.50000,
+      "price_end": 24.00000
+    }
+  },
+  {
+    "model": "kaoshi.pricelist",
+    "pk": 7,
+    "fields": {
+      "material_id": 3,
+      "quantity_start": 200000,
+      "quantity_end": 99999999,
+      "price_start": 21.50000,
+      "price_end": 23.50000
+    }
+  },
+  {
+    "model": "kaoshi.pricelist",
+    "pk": 8,
+    "fields": {
+      "material_id": 4,
+      "quantity_start": 0,
+      "quantity_end": 1000,
+      "price_start": 0.02000,
+      "price_end": 0.03000
+    }
+  },
+  {
+    "model": "kaoshi.pricelist",
+    "pk": 9,
+    "fields": {
+      "material_id": 4,
+      "quantity_start": 1000,
+      "quantity_end": 10000,
+      "price_start": 0.01800,
+      "price_end": 0.02800
+    }
+  },
+  {
+    "model": "kaoshi.pricelist",
+    "pk": 10,
+    "fields": {
+      "material_id": 4,
+      "quantity_start": 10000,
+      "quantity_end": 99999999,
+      "price_start": 0.01200,
+      "price_end": 0.02200
+    }
+  }
+]
